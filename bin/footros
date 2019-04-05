@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -e
+source "/usr/local/opt/chpharos/share/chpharos/chpharos.sh"
+chpharos install 2.3.3
+chpharos use 2.3.3
+
+case "$1" in
+  "ssh")
+    footloose ssh root@footros0
+  ;;
+  "apply")
+    docker-compose build
+    footloose create
+    pharos-cluster --debug up
+  ;;
+  "destroy")
+    footloose delete
+  ;;
+  *)
+    echo ""
+    echo "USAGE: footros ssh|apply|destroy"
+    exit 1
+  ;;
+esac
