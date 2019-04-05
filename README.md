@@ -2,6 +2,5 @@
 
 kontena pharos on footloose
 
-    bin/footros apply
+    bin/footros recreate
     bin/footros ssh
-    bin/footros destroy
