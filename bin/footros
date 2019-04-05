@@ -7,11 +7,16 @@ chpharos use 2.3.3
 
 case "$1" in
   "ssh")
-    footloose ssh root@footros0
+    shift
+    footloose ssh root@footros0 "$@"
   ;;
   "recreate")
     docker-compose build
+
+    footloose delete
+    sleep 0.5 # bug in footloose (??)
     footloose create
+
     pharos-cluster --debug up
   ;;
   *)

@@ -21,3 +21,6 @@ machines:
     - type: bind
       source: /proc/swaps
       destination: /proc/swaps
+    # crio
+    # - type: volume
+    #   destination: /var/lib/containers

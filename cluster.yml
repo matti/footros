@@ -5,6 +5,7 @@ hosts:
     user: root
     role: master
     ssh_key_path: cluster-key
+#    container_runtime: cri-o
 network: {} # Use Weave networking with default config
 addons:
   ingress-nginx:
